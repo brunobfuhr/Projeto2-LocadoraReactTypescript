@@ -7,12 +7,11 @@ import { AppWindow, Pencil, Trash } from "phosphor-react";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
-import { Brand, BrandModal } from "../modais/BrandModal";
-
+import { Modelo, ModeloModal } from "../modais/ModeloModal";
 
 
 interface CardProps {
-  data: Brand;
+  data: Modelo;
 }
 
 
@@ -22,8 +21,8 @@ export function Card({ data }: CardProps) {
 
   const showSwal = () => {
     MySwal.fire({
-      title: <strong>Editar Marca</strong>,
-      html: <BrandModal closeModal={MySwal.close} userData={data} />,
+      title: <strong>Editar Modelo</strong>,
+      html: <ModeloModal closeModal={MySwal.close} userData={data} />,
       showConfirmButton: false,
     }).then(() => window.location.reload());
   };
@@ -34,11 +33,11 @@ export function Card({ data }: CardProps) {
     {
      return;
     }
-     axios.delete(`http://localhost:3000/brands/` + data.id)
+     axios.delete(`http://localhost:3000/modelos/` + data.id)
          .then((response) => {
-             Swal.fire(`Marca ${data.name} deletada`);
+             Swal.fire(`Modelo ${data.name} deletado`);
          }, (error) => {
-             Swal.fire(`Erro ao deletar marca: ${error.response.data.error} `);
+             Swal.fire(`Erro ao deletar modelo: ${error.response.data.error} `);
          });
  };
 

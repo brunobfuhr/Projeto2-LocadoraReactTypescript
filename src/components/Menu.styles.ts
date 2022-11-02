@@ -22,7 +22,7 @@ export const ContentContainer = styled.div`
 export const NavLinkContainer = styled.div`
   margin-top: 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   gap: 2rem;
   a {

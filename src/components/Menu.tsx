@@ -1,4 +1,5 @@
-import { User, Car } from "phosphor-react";
+import { User, ArrowUDownLeft, Car } from "phosphor-react";
+import { Navbar } from "react-bootstrap";
 
 import {
   ContentContainer,
@@ -11,11 +12,15 @@ export function Menu() {
   return (
     <MenuContainer>
       <ContentContainer>
-        <Car size={52} color="#56CCF2"/>
+        <NavbarLink to="/home">
+          <ArrowUDownLeft size={42} />
+
+        </NavbarLink>
+        {/* <Car size={52} color="#56CCF2"/> */}
         <NavLinkContainer>
-          <NavbarLink to="/users">
+          {/* <NavbarLink to="/users">
             <User size={32} />
-          </NavbarLink>
+          </NavbarLink> */}
         </NavLinkContainer>
       </ContentContainer>
     </MenuContainer>

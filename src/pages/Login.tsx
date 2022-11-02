@@ -55,11 +55,11 @@ export function Login() {
 
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(handleSubmitLogin)}>
-          <h1>Fazer Login</h1>
+          <h1>Login</h1>
           <InputsContainer>
             <Input
-              width={416}
-              height={72}
+              width={316}
+              height={52}
               label="Email"
               id="email"
               placeholder="Digite seu email"
@@ -70,13 +70,13 @@ export function Login() {
               label="Senha"
               id="password"
               placeholder="Digite sua senha"
-              width={416}
-              height={72}
+              width={316}
+              height={52}
               errorMessage={errors.password?.message}
               type="password"
             />
           </InputsContainer>
-          <Button label="Login" />
+          <Button label="Login" width={316} height={52} />
           <span>{errorLogin}</span>
         </form>
       </FormProvider>

@@ -13,15 +13,8 @@ export function Home() {
   return (
     <>
       <NavMenu />
-      {/* <div>Welcome, {user?.name}</div> */}
-      {/* <Button label="Sair" onClick={logout} /> */}
-
       <Carousel />
-
-
-
     </>
-
 
   );
 }

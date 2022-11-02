@@ -21,7 +21,7 @@ const newUserValidationSchema = zod.object({
     .string()
     .min(1, "Informe a sua senha")
     .email("Informe um e-mail válido"),
-  password: zod.string().min(5, "Sua senha deve conter 5 digitos"),
+  password: zod.string().min(6, "Sua senha deve conter 6 digitos"),
   age: zod.any(),
   sex: zod.string(),
 });
@@ -107,6 +107,7 @@ export function UserModal({ closeModal, userData }: UserModalProps) {
             errorMessage={errors.email?.message}
           />
           <Input
+          type="password"
             label="Senha"
             id="password"
             errorMessage={errors.password?.message}

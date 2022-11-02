@@ -8,12 +8,13 @@ export const SidebarContainer = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 100%;
-  height: 96px;
+  height: 66px;
   background-color: #212121;
   color: white;
-  margin-left: 6rem;
-  border-bottom: 1px solid ${(props) => props.theme["gray-100"]}; ;
+  /* margin-left: 6rem; */
+  /* border-bottom: 1px solid ${(props) => props.theme["gray-100"]}; ; */
 `;
 
 export const ContentContainer = styled.div`
@@ -32,9 +33,9 @@ export const ContentContainer = styled.div`
 export const UserContainer = styled.div`
   display: flex;
   align-items: center;
-  width: 30rem;
+  /* width: 24rem; */
   /* margin-top: 1.6875rem; */
-  gap: 100px;
+  gap: 30px;
 `;
 
 export const UserData = styled.div`

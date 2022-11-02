@@ -33,9 +33,9 @@ export function Card({ data }: CardProps) {
     }
      axios.delete(`http://localhost:3000/users/` + data.id)
          .then((response) => {
-             Swal.fire(`Brand ${data.name} deleted`);
+             Swal.fire(`Usuário ${data.name} excluído`);
          }, (error) => {
-             Swal.fire(`Error to delete brand: ${error.response.data.error} `);
+             Swal.fire(`Erro ao excluir usuário: ${error.response.data.error} `);
          });
  };
 

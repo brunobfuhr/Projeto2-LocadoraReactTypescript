@@ -13,22 +13,33 @@ function CollapsibleExample() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Locadora CrieCars</Navbar.Brand>
+      <Navbar.Brand href="#home">
+            <img
+              alt="logo-CrieTI"
+              src="https://www.univates.br/media/crie_ti/images/logo-crie-ti.png"
+              width="100"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+           Car Rental
+          </Navbar.Brand>
+        {/* <Navbar.Brand href="#home">Locadora CrieCars</Navbar.Brand> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Veículos</Nav.Link>
+            <Nav.Link href="/cars">Veículos</Nav.Link>
+            <Nav.Link href="#">Dashboard</Nav.Link>
             <Nav.Link href="#pricing"></Nav.Link>
             <NavDropdown title="Cadastros" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Usuarios</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="/users">Usuarios</NavDropdown.Item>
+              <NavDropdown.Item href="/clients">
                 Clientes
               </NavDropdown.Item>
-              <NavDropdown.Item href="#">Veículos</NavDropdown.Item>
-              <NavDropdown.Item href="#">Marcas</NavDropdown.Item>
-              <NavDropdown.Item href="#">Estados</NavDropdown.Item>
-              <NavDropdown.Item href="#">Cidades</NavDropdown.Item>
-              <NavDropdown.Item href="#"></NavDropdown.Item>
+              <NavDropdown.Item href="/cars">Veículos</NavDropdown.Item>
+              <NavDropdown.Item href="/brands">Marcas</NavDropdown.Item>
+              <NavDropdown.Item href="/modelos">Modelos</NavDropdown.Item>
+              <NavDropdown.Item href="/states">Estados</NavDropdown.Item>
+              <NavDropdown.Item href="/cities">Cidades</NavDropdown.Item>
               {/* <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.5">
                 Separated link

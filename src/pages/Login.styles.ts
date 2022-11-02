@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const LoginContainer = styled.main`
   height: 100vh;
   width: 100vw;
-  background-image: url("https://static.wixstatic.com/media/a5fd4e_6d62f0f9b89c4ac9b97dc4521b2de95f~mv2.jpg/v1/fill/w_1514,h_1080,al_c,q_85,enc_auto/a5fd4e_6d62f0f9b89c4ac9b97dc4521b2de95f~mv2.jpg");
+  background-color: #212121;
+  background-image: radial-gradient(circle, #000000 0%, #00d4ff 100%);
+  background-repeat: no-repeat;
   /* display: grid; */
   /* grid-template-columns: 1fr 1fr; */
   /* align-items: center; */
@@ -16,21 +18,26 @@ export const LoginContainer = styled.main`
   } */
   
   form {
+  padding-top:120px;
     margin: 0 auto;
     align-items: center;
     max-width: 26rem;
     display: flex;
     flex-direction: column;
     gap: 32px;
+    box-shadow: #212121;
     
   }
 
   h1 {
+    color: #fff;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 32px;
   }
-
+label {
+  color: #fff;
+}
   span {
     color: red;
   }

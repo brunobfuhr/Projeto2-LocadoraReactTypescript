@@ -14,11 +14,15 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   font-size: 18px;
 
   border-radius: 10px;
+  
 
   color: ${(props) => props.theme.white};
   background-color: ${(props) => props.theme.primary};
   border: none;
   :hover{
     background-color: royalblue;
+    cursor: pointer;
   }
+ 
+  
 `;

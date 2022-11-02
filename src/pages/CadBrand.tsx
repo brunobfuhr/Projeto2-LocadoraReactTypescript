@@ -35,7 +35,7 @@ export function BrandList() {
       <Menu />
 
       <MainContainer>
-        <Button label="Cadastrar Marca" width={82} height={50} onClick={showSwal} />
+        <Button label="Cadastrar" width={82} height={50} onClick={showSwal} />
         {userList.map((user) => {
           return <Card data={user} />;
         })}

@@ -6,39 +6,26 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 
 import { Button } from "../button/Button";
-import { DivContainer, ItemsFormContainer } from "./UserModal.styles";
+import { DivContainer, ItemsFormContainer } from "./BrandModal.styles";
 import { FormProvider, useForm } from "react-hook-form";
 import { Input } from "../Input";
 
 interface UserModalProps {
   closeModal: Function;
-  userData?: State;
+  userData?: Modelo;
 }
 
-const newUserValidationSchema = zod.object({
-  name: zod.string().min(1, "Informe um nome válido"),
-  email: zod
-    .string()
-    .min(1, "Informe a sua senha")
-    .email("Informe um e-mail válido"),
-  password: zod.string().min(5, "Sua senha deve conter 5 digitos"),
-  age: zod.any(),
-  sex: zod.string(),
-});
 
-export type State = {
+export type Modelo = {
   id: number;
   name: string;
-  province: string;
-
+ 
 };
 
-export function StateModal({ closeModal, userData }: UserModalProps) {
-  const methods = useForm<State>({
-    // resolver: zodResolver(newUserValidationSchema),
+export function ModeloModal({ closeModal, userData }: UserModalProps) {
+  const methods = useForm<Modelo>({
     defaultValues: {
       name: "",
-      province: "",
      
     },
   });
@@ -50,39 +37,36 @@ export function StateModal({ closeModal, userData }: UserModalProps) {
   useEffect(() => {
     if (userData) {
       setValue("name", userData.name);
-      setValue("province", userData.province);
-    
+      
     }
   }, [userData]);
 
   const { errors } = formState;
 
-  async function handleCrateNewUser(data: State) {
+  async function handleCrateNewUser(data: Modelo) {
     console.log("acessou");
     try {
       console.log(userData);
       if (userData) {
         console.log("acessou");
-        await axios.put(`http://localhost:3000/states/${userData.id}`, {
+        await axios.put(`http://localhost:3000/modelos/${userData.id}`, {
           name: data.name,
-          province: data.province,
-         
+          
         });
 
-        toast.success("User edited successfully");
+        toast.success("Modelo editado com sucesso!");
       } else {
-        await axios.post("http://localhost:3000/states", {
+        await axios.post("http://localhost:3000/modelos", {
           name: data.name,
-          province: data.province,
         
         });
 
-        toast.success("Estado Cadastrado");
+        toast.success("Modelo cadastrado");
       }
 
       closeModal();
     } catch (error) {
-      toast.error("Erro ao criar estado");
+      toast.error("Erro ao cadastrar modelo");
     }
   }
 
@@ -91,13 +75,7 @@ export function StateModal({ closeModal, userData }: UserModalProps) {
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(handleCrateNewUser)}>
           <Input label="Nome" id="name" errorMessage={errors.name?.message} />
-          <Input
-            label="Uf"
-            id="province"
-            errorMessage={errors.province?.message}
-          />
-         
-
+       
           <Button label="Enviar Dados" />
         </form>
       </FormProvider>
